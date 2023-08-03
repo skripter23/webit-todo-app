@@ -1,7 +1,9 @@
 import { add } from '@/redux/slices/todoSlice'
-import { useAppDispatch } from '@/redux/store'
+import { useAppDispatch, useAppSelector } from '@/redux/store'
 
 import type { FormikHelpers } from 'formik'
+
+import uuid from 'react-uuid'
 
 interface AddTodoFormValues {
     name: string
@@ -11,9 +13,11 @@ interface AddTodoFormValues {
 
 const useAddTodo = () => {
     const dispatch = useAppDispatch()
+    const todos = useAppSelector((state) => state.todosReducer)
+    console.log('useAddTodo  todos:', todos)
 
     const handleSubmit = (values: AddTodoFormValues, { resetForm }: FormikHelpers<AddTodoFormValues>) => {
-        dispatch(add(values))
+        dispatch(add({ id: uuid(), ...values }))
         resetForm()
     }
 

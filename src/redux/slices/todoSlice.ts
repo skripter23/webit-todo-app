@@ -1,6 +1,7 @@
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 interface ITodo {
+    id: string
     name: string
     description: string
     date: string
