@@ -1,3 +1,8 @@
+import { add } from '@/redux/slices/todoSlice'
+import { useAppDispatch } from '@/redux/store'
+
+import type { FormikHelpers } from 'formik'
+
 interface AddTodoFormValues {
     name: string
     description: string
@@ -5,8 +10,11 @@ interface AddTodoFormValues {
 }
 
 const useAddTodo = () => {
-    const handleSubmit = (values: AddTodoFormValues) => {
-        console.log(values)
+    const dispatch = useAppDispatch()
+
+    const handleSubmit = (values: AddTodoFormValues, { resetForm }: FormikHelpers<AddTodoFormValues>) => {
+        dispatch(add(values))
+        resetForm()
     }
 
     return {
