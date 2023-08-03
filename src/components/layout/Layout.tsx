@@ -1,10 +1,8 @@
-import type { FC, ReactNode } from 'react'
-import { Header } from './components/header/Header'
-import { Footer } from './components/footer/Footer'
+import type { FC } from 'react'
+import type { ILayout } from './interface/layout.interface'
 
-interface ILayout {
-    children: ReactNode
-}
+import Header from './components/header/'
+import Footer from './components/footer/'
 
 const Layout: FC<ILayout> = ({ children }) => {
     return (

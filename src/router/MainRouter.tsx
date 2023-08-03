@@ -1,16 +1,18 @@
+import type { ComponentType, FC, ReactNode } from 'react'
 import { Route, Routes } from 'react-router-dom'
+
+import { CssBaseline } from '@mui/material'
+import { ThemeSettingProvider } from '@/theme/theme'
+import Layout from '@/components/layout/'
+
 import { IRoute, routePublic } from '@/router/routes/routePublic'
 import { routeDashboard } from '@/router/routes/routeDashboard'
-import { CssBaseline } from '@mui/material'
-import * as React from 'react'
-import { ThemeSettingProvider } from '@/theme/theme'
-import Layout from '@/components/layout/Layout'
 
-const ReturnComponent = (Component: React.ComponentType) => {
+const ReturnComponent = (Component: ComponentType): ReactNode => {
     return <Component />
 }
 
-export const MainRouter = () => {
+export const MainRouter: FC = () => {
     const allRoutes: IRoute[] = [...routePublic, ...routeDashboard]
 
     return (

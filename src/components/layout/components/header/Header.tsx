@@ -1,18 +1,20 @@
-import React, { useContext } from 'react'
+import type { FC } from 'react'
+import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import { AppBar, IconButton, Stack, Toolbar, Typography, useTheme } from '@mui/material'
 import BuildIcon from '@mui/icons-material/Build'
-import { useAppDispatch } from '@/redux/store'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
-import { useNavigate } from 'react-router-dom'
 import { AccountCircle } from '@mui/icons-material'
+
 import { ThemeSwitchContext } from '@/theme/theme'
 
-export const Header = () => {
+const Header: FC = () => {
     const themeMaterial = useTheme()
-    const dispatch = useAppDispatch()
     const { toggleColorMode } = useContext(ThemeSwitchContext)
     const navigate = useNavigate()
+
     return (
         <AppBar position="static">
             <Toolbar
@@ -45,3 +47,5 @@ export const Header = () => {
         </AppBar>
     )
 }
+
+export default Header

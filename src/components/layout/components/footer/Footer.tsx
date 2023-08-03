@@ -1,7 +1,8 @@
-import React, { ReactElement } from 'react'
+import type { FC } from 'react'
+
 import { Box, Container, Grid, Typography } from '@mui/material'
 
-export const Footer = (): ReactElement => {
+const Footer: FC = () => {
     return (
         <Box
             sx={{
@@ -30,3 +31,5 @@ export const Footer = (): ReactElement => {
         </Box>
     )
 }
+
+export default Footer
