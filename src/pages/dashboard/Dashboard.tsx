@@ -1,3 +1,9 @@
-export const Dashboard = () => {
-    return <h2>DashBoard</h2>
+import type { FC } from 'react'
+
+import AddTodo from '@/components/addTodo/AddTodo'
+
+const Dashboard: FC = () => {
+    return <AddTodo />
 }
+
+export default Dashboard

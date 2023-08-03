@@ -1,19 +1,19 @@
 import type { FC } from 'react'
 
-import { Box, Container, Grid, Typography } from '@mui/material'
+import { Container, Grid, Typography } from '@mui/material'
+import { styled } from '@mui/system'
+
+const StyledFooter = styled('footer')({
+    width: '100%',
+    height: 'auto',
+    paddingTop: '1rem',
+    paddingBottom: '1rem',
+    marginTop: 'auto',
+})
 
 const Footer: FC = () => {
     return (
-        <Box
-            sx={{
-                width: '100%',
-                height: 'auto',
-                backgroundColor: 'secondary.main',
-                paddingTop: '1rem',
-                paddingBottom: '1rem',
-                marginTop: 'auto',
-            }}
-        >
+        <StyledFooter sx={{ backgroundColor: 'secondary.main' }}>
             <Container maxWidth="lg">
                 <Grid container direction="column" alignItems="center">
                     <Grid item xs={12}>
@@ -28,7 +28,7 @@ const Footer: FC = () => {
                     </Grid>
                 </Grid>
             </Container>
-        </Box>
+        </StyledFooter>
     )
 }
 

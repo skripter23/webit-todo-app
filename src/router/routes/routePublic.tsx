@@ -1,5 +1,6 @@
-import { FC } from 'react'
-import { Dashboard } from '@/pages/dashboard/Dashboard'
+import type { FC } from 'react'
+
+import Dashboard from '@/pages/dashboard/Dashboard'
 
 export interface IRoute {
     path: string
