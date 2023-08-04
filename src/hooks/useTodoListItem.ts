@@ -8,12 +8,11 @@ import type { ITodoListItem } from '@/components/todoListItem/interface/todoList
 const useTodoListItem = (todo: ITodoListItem) => {
     const dispatch = useAppDispatch()
     const [editable, setEdit] = useState<boolean>(false)
-    const [originalTodo] = useState<ITodoListItem>({ ...todo })
 
     const handleNameEdit = (name: string) => dispatch(change({ ...todo, name }))
     const handleDescriptionEdit = (description: string) => dispatch(change({ ...todo, description }))
     const handleDateEdit = (date: string) => dispatch(change({ ...todo, date }))
-    const handleCancelEdit = () => dispatch(change(originalTodo)) && setEdit(false)
+    const handleCancelEdit = () => setEdit(false)
     const handleRemoveTodo = (id: string) => dispatch(remove(id))
     const handleEdit = () => setEdit(true)
     const handleSubmitEdit = () => setEdit(false)
