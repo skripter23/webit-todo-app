@@ -13,4 +13,4 @@ Extra points:
 upload 20 pokemon (ideally with upload more using the button) + make a card, another page. ✅
 
 # Pokemons
-/pokemons - all pokemons
+Idk why Firebase hosting doesnt see links, i add button for it :)
