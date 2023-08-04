@@ -1,4 +1,5 @@
-import { type PayloadAction, createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 interface ITodo {
     id: string
@@ -6,8 +7,7 @@ interface ITodo {
     description: string
     date: string
 }
-
-export interface ITodoState {
+interface ITodoState {
     todos: Array<ITodo>
 }
 
@@ -25,9 +25,12 @@ export const todosSlice = createSlice({
         remove(state, action: PayloadAction<string>) {
             state.todos = state.todos.filter((todo) => todo.id !== action.payload)
         },
+        change(state, action: PayloadAction<ITodo>) {
+            state.todos = state.todos.map((item) => (item.id === action.payload.id ? action.payload : item))
+        },
     },
 })
 
-export const { add, remove } = todosSlice.actions
+export const { add, remove, change } = todosSlice.actions
 
 export default todosSlice.reducer
