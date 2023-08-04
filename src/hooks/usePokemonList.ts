@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 import axios from 'axios'
 
-const usePokemon = () => {
+const usePokemonList = () => {
     const [pokemonList, setPokemonList] = useState<Array<IPokemonList>>([])
     const [maximumCount, setMaximumCount] = useState<number>(Infinity)
     const [limit, setLimit] = useState<number>(20)
@@ -26,4 +26,4 @@ const usePokemon = () => {
     }
 }
 
-export default usePokemon
+export default usePokemonList
