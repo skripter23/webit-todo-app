@@ -4,6 +4,7 @@ import { Box, Card, CardContent, Typography } from '@mui/material'
 
 import { useLocation } from 'react-router-dom'
 import usePokemonDetail from '@/hooks/usePokemonDetail'
+import PokemonDetailRow from '@/components/pokemonDetailRow/PokemonDetailRow'
 
 const PokemonDetail: FC = () => {
     const { state: url } = useLocation()
@@ -15,19 +16,17 @@ const PokemonDetail: FC = () => {
             <Card>
                 <CardContent>
                     <img src={pokemonDetail?.sprites.other['official-artwork'].front_default} alt="Pokemon" />
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        Name:{' '}
-                        {pokemonDetail?.name && pokemonDetail?.name[0].toUpperCase() + pokemonDetail?.name.slice(1)}
-                    </Typography>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        Weight: {pokemonDetail?.weight}
-                    </Typography>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        Height: {pokemonDetail?.height}
-                    </Typography>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                        Base experience: {pokemonDetail?.base_experience}
-                    </Typography>
+                    <PokemonDetailRow
+                        title="Name"
+                        text={
+                            (pokemonDetail?.name &&
+                                pokemonDetail?.name[0].toUpperCase() + pokemonDetail?.name.slice(1)) ||
+                            ''
+                        }
+                    />
+                    <PokemonDetailRow title="Weight" text={String(pokemonDetail?.weight) || ''} />
+                    <PokemonDetailRow title="Height" text={String(pokemonDetail?.height) || ''} />
+                    <PokemonDetailRow title="Base experience" text={String(pokemonDetail?.base_experience) || ''} />
                 </CardContent>
             </Card>
         </Box>
