@@ -1,7 +1,8 @@
 import type { FC } from 'react'
 
-import { Container, Grid, Typography } from '@mui/material'
+import { Button, Container, Grid, Typography } from '@mui/material'
 import { styled } from '@mui/system'
+import { Link } from 'react-router-dom'
 
 const StyledFooter = styled('footer')({
     width: '100%',
@@ -26,6 +27,9 @@ const Footer: FC = () => {
                             {`${new Date().getFullYear()} | React | Material UI | React Router`}
                         </Typography>
                     </Grid>
+                    <Link to="/pokemons">
+                        <Button variant="contained">Go to POKEMONS!!!</Button>
+                    </Link>
                 </Grid>
             </Container>
         </StyledFooter>
