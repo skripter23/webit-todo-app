@@ -2,14 +2,9 @@ import { add } from '@/redux/slices/todoSlice'
 import { useAppDispatch } from '@/redux/store'
 
 import type { FormikHelpers } from 'formik'
+import type { AddTodoFormValues } from '@/types/interfaces'
 
 import uuid from 'react-uuid'
-
-interface AddTodoFormValues {
-    name: string
-    description: string
-    date: string
-}
 
 const useAddTodo = () => {
     const dispatch = useAppDispatch()

@@ -1,15 +1,7 @@
+import type { ITodo, ITodoState } from '@/types/interfaces'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import { createSlice } from '@reduxjs/toolkit'
 
-interface ITodo {
-    id: string
-    name: string
-    description: string
-    date: string
-}
-interface ITodoState {
-    todos: Array<ITodo>
-}
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState: ITodoState = {
     todos: [],

@@ -1,7 +1,9 @@
 import type { FC } from 'react'
 import type { ITodoListItem } from '../../interface/todoListItem.interface'
 
-import { Box, ListItemText, TextField } from '@mui/material'
+import { ListItemText } from '@mui/material'
+import EditableField from './components/editableField/EditableField'
+
 import useTodoListItem from '@/hooks/useTodoListItem'
 
 const EditableItem: FC<ITodoListItem> = (todo) => {
@@ -12,56 +14,35 @@ const EditableItem: FC<ITodoListItem> = (todo) => {
         <>
             <ListItemText
                 primary={
-                    <Box display="flex" alignItems="center" gap={2}>
-                        <Box component="span">Name: </Box>
-                        <TextField
-                            type="text"
-                            defaultValue={name}
-                            onBlur={(e) => handleNameEdit(e.currentTarget.value)}
-                            inputProps={{
-                                style: {
-                                    height: '1px',
-                                    width: '100px',
-                                },
-                            }}
-                        />
-                    </Box>
+                    <EditableField
+                        type="text"
+                        defaultValue={name}
+                        label="Name"
+                        style={{ height: '1px', width: '100px' }}
+                        onBlur={(e) => handleNameEdit(e.currentTarget.value)}
+                    />
                 }
             />
             <ListItemText
                 primary={
-                    <Box display="flex" alignItems="center" gap={2}>
-                        <Box component="span">Description: </Box>
-                        <TextField
-                            type="text"
-                            defaultValue={description}
-                            onBlur={(e) => handleDescriptionEdit(e.currentTarget.value)}
-                            inputProps={{
-                                style: {
-                                    height: '1px',
-                                    width: '90px',
-                                },
-                            }}
-                        />
-                    </Box>
+                    <EditableField
+                        type="text"
+                        defaultValue={description}
+                        label="Description"
+                        style={{ height: '1px', width: '90px' }}
+                        onBlur={(e) => handleDescriptionEdit(e.currentTarget.value)}
+                    />
                 }
             />
             <ListItemText
                 primary={
-                    <Box display="flex" alignItems="center" gap={2}>
-                        <Box component="span">Date: </Box>
-                        <TextField
-                            type="date"
-                            defaultValue={date}
-                            onBlur={(e) => handleDateEdit(e.currentTarget.value)}
-                            inputProps={{
-                                style: {
-                                    height: '1px',
-                                    width: '140px',
-                                },
-                            }}
-                        />
-                    </Box>
+                    <EditableField
+                        type="date"
+                        defaultValue={date}
+                        label="Date"
+                        style={{ height: '1px', width: '140px' }}
+                        onBlur={(e) => handleDateEdit(e.currentTarget.value)}
+                    />
                 }
             />
         </>

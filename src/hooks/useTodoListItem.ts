@@ -10,11 +10,11 @@ const useTodoListItem = (todo: ITodoListItem) => {
     const [editable, setEdit] = useState<boolean>(false)
     const [originalTodo] = useState<ITodoListItem>({ ...todo })
 
-    const handleNameEdit = (newName: string) => dispatch(change({ ...todo, name: newName }))
-    const handleDescriptionEdit = (newDesc: string) => dispatch(change({ ...todo, description: newDesc }))
-    const handleDateEdit = (newDate: string) => dispatch(change({ ...todo, date: newDate }))
+    const handleNameEdit = (name: string) => dispatch(change({ ...todo, name }))
+    const handleDescriptionEdit = (description: string) => dispatch(change({ ...todo, description }))
+    const handleDateEdit = (date: string) => dispatch(change({ ...todo, date }))
     const handleCancelEdit = () => dispatch(change(originalTodo)) && setEdit(false)
-    const handleRemoveTodo = (todoId: string) => dispatch(remove(todoId))
+    const handleRemoveTodo = (id: string) => dispatch(remove(id))
     const handleEdit = () => setEdit(true)
     const handleSubmitEdit = () => setEdit(false)
 
