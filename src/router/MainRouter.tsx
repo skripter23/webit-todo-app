@@ -7,13 +7,14 @@ import Layout from '@/components/layout/'
 
 import { IRoute, routePublic } from '@/router/routes/routePublic'
 import { routeDashboard } from '@/router/routes/routeDashboard'
+import { routePokemon } from '@/router/routes/routePokemon'
 
 const ReturnComponent = (Component: ComponentType): ReactNode => {
     return <Component />
 }
 
 export const MainRouter: FC = () => {
-    const allRoutes: IRoute[] = [...routePublic, ...routeDashboard]
+    const allRoutes: IRoute[] = [...routePublic, ...routeDashboard, ...routePokemon]
 
     return (
         <ThemeSettingProvider>
