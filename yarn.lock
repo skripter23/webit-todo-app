@@ -1105,6 +1105,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-slick@^0.23.10":
+  version "0.23.10"
+  resolved "https://registry.npmjs.org/@types/react-slick/-/react-slick-0.23.10.tgz"
+  integrity sha512-ZiqdencANDZy6sWOWJ54LDvebuXFEhDlHtXU9FFipQR2BcYU2QJxZhvJPW6YK7cocibUiNn+YvDTbt1HtCIBVA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@^4.4.5":
   version "4.4.5"
   resolved "https://registry.npmjs.org/@types/react-transition-group/-/react-transition-group-4.4.5.tgz"
