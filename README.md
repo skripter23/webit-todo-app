@@ -14,3 +14,9 @@ upload 20 pokemon (ideally with upload more using the button) + make a card, ano
 
 # Pokemons
 Idk why Firebase hosting doesnt see links, i add button for it :)
+
+# Render Time
+Since the mui library is one of the most demanding and space-consuming graphics libraries for React, I tried to split the rendering pieces into different components as much as possible in order to get a better rendering picture.
+
+![image](https://github.com/skripter23/webit-todo-app/assets/70813115/6afad959-503e-45f1-a97d-db0c1872679f)
+
