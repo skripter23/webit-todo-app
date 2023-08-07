@@ -18,5 +18,14 @@ Idk why Firebase hosting doesnt see links, i add button for it :)
 # Render Time
 Since the mui library is one of the most demanding and space-consuming graphics libraries for React, I tried to split the rendering pieces into different components as much as possible in order to get a better rendering picture.
 
+Dashboard
 ![image](https://github.com/skripter23/webit-todo-app/assets/70813115/6afad959-503e-45f1-a97d-db0c1872679f)
+
+PokemonPage
+![image](https://github.com/skripter23/webit-todo-app/assets/70813115/3c34eb82-02b2-4db9-b926-3565d1faa4bd)
+
+PokemonDetail
+![image](https://github.com/skripter23/webit-todo-app/assets/70813115/32f30c2c-ac3c-4110-87d0-7ac776203a96)
+
+
 
