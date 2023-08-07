@@ -1,4 +1,5 @@
-import { useEffect, type FC } from 'react'
+import type { FC } from 'react'
+import { useEffect, Suspense } from 'react'
 
 import AddTodo from '@/components/addTodo/AddTodo'
 import TodoListItem from '@/components/todoListItem/TodoListItem'
@@ -17,9 +18,11 @@ const Dashboard: FC = () => {
     return (
         <>
             <AddTodo />
-            {(todos || []).map((item, i) => (
-                <TodoListItem {...item} key={i} />
-            ))}
+            <Suspense fallback={<span>Loading...</span>}>
+                {(todos || []).map((item, i) => (
+                    <TodoListItem {...item} key={i} />
+                ))}
+            </Suspense>
         </>
     )
 }

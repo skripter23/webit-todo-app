@@ -1,4 +1,5 @@
 import type { FC } from 'react'
+import { Suspense } from 'react'
 
 import { Paper } from '@mui/material'
 import PokemonListItems from '@/components/pokemonListItems/PokemonListItems'
@@ -13,7 +14,9 @@ const Pokemons: FC = () => {
     return (
         <Paper style={{ margin: 10, padding: 10, textAlign: 'center' }}>
             <PokemonListItemsTitle title="Pokémons" />
-            <PokemonListItems pokemonList={pokemonList} />
+            <Suspense fallback={<span>Loading...</span>}>
+                <PokemonListItems pokemonList={pokemonList} />
+            </Suspense>
             <PokemonListItemsMoreButton
                 title="More pokemons!"
                 pokemonList={pokemonList}
